@@ -1,0 +1,12 @@
+{
+    "name": "authorship_verification",
+    "description": "Identify which of the text passages given as choices was written by the same author as the text passage given as the reference",
+    "example_input_prefix": "",
+    "keywords": [
+        "multiple choice",
+        "zero-shot",
+        "context length",
+        "writing style"
+    ],
+    "examples": []
+}

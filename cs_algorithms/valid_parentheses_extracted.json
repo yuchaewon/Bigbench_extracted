@@ -1,0 +1,7010 @@
+{
+    "name": "valid_parentheses",
+    "description": "Determining if a given sequence of parentheses is valid",
+    "keywords": [
+        "algorithms",
+        "context length"
+    ],
+    "examples": [
+        {
+            "input": "[ { ] } } ) [ ) [ } [ ) } ) { } ) [ { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( { [ ] } ) } [ { } { ( ) } { { } } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ( ) ] ( [ [ ] ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ] } (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ { } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } ( [ ( [ ] ) ] ) [ ] [ [ [ { } ] ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( { [ [ ( ) ] { ( ) [ [ ( ) ] ] } ] } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] { } ( [ ] ) ( ) [ ] ( ) [ ( ( ) ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) { ( ] } [ ( ) ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } [ ] { ) ( ) ) [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] [ ] [ ] { } ( ) [ ] { ( ) } { [ ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ( [ ( { ) ) ] ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] [ [ [ ( ) ] ] ( ) { } { } ] { } [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ( [ ] { [ ] } ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( { ( { } ) ( ) } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) ( [ ] [ [ ] ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( [ [ { } ] [ ( ( ( ( [ ] ) ) ) ) ] ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} ) { ) [ ] } ) ) ( [ ( ) { ] ) ) ) { )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} { [ )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ] ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( ( ) ) ( ) [ ] ( [ { } ] ( [ ] ) ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } { } { } { { [ ] [ ] } } ( { [ ] } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) ( [ ] { ( ) } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") [ } { [ ( ( ) ) ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) [ ( [ [ ] ] ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } { }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} ) ( ) ) ) } ) } } ) } ) ) ) ) } ) ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ] { ( { { { ] } } { ( ( [ ] ) ) } ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ { } [ [ ( [ [ ] ] ) ] ] ] { } [ ] ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } ( ) ( ) { ( ) [ ] } [ ] ( ( { } ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) } [ ( { } { ) ) [ { } ] [ ] ] [ ] {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ } [ ] ( ) { ] ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ( [ ] { ( ) } ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } { ( ) } } ) [ ) ) [ ] ) } } } } } (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) [ ] ( ) [ ] { }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ [ ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} ( ) ( ( { } ) { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( { } [ ] ) { } [ ( ( ) ( ) ) ] [ ] ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( { { { [ ] ( ) } } } { { } { [ ] } } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") } } { [ ) ) [ ] [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } ( [ ] ] { ) { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) ( ) [ { [ ] } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ( [ [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ { [ { } ] } ( [ [ ] { } ] ( ( ) ) ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ [ ( [ { } ] ) ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") { } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ( ( ) ( ( ) ) ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") ) { ) } } ) } ) } { ] } } } } ) } ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ { [ ] } ( { [ [ { } ] ] } ( ) ) ] [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( } [ } [ } } } { [ ] } ) [ ] ( } } } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} { ) {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) [ ] ( { ) ( ) {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] [ ] { } { } { }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} [ [ ] ] ( ) { } (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ) ( ) [ { ] ] [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ] { ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] ( ) { } ( ) [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") ) } } ) } ) } ) [ } } ) } ) ) ) } ) (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] { }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( [ ( ) ( { [ ] } { ) ) ) ) { } ( [ ] )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ) } } ) [ ) ( ] } ) } } } ) ) ) } ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( { } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) ( ( [ ( { [ } [ ( ) [ ] } } ) ] ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ { } ] { } ( [ ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ [ ) ] [ ) [ ] ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ { { } } ] { } ( { [ ( { [ ] } ) ] } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ { } { ( [ ] ) } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ( [ ] { } ) ) { } ( ] { } { [ ] } [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } { [ { } { } [ ( ) [ [ ( ) ] ] ] ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ { { [ [ ( ) [ { ( { } ) } ] ] ] } } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") [ ] ) ( } { ] ( ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ) ( } { ] } ( ) (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( [ ] ] [ [ ] ] ( ) { } [ ( ) [ ] ] ( {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( ] [ [ ] ] [ { } ] { { { ( ) } } ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") ) ) } { { } ] ( ) } ) { } } [ ] ) { ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( { } { [ } } ) ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) [ ] { [ [ ] ] } ( ( [ ] { } [ ] ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") { ) ) ( ] { [ } ( { ] } } [ [ } } ) (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) { { ] } [ ) [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ) ( } ( { ] ( } (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ { } } { ( ) { } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ { ] } { { ) } } ( [ } ] ) } ) { ] ) (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( { } [ [ { } ] ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ( ) ] ( [ { } ] { [ { { } } ] ( ) } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] { [ ( { } ) ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( [ ( ( ) ) } ) ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( { } (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ) [ { [ } [ ] } ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ { } { } { } } { ( ) [ ( ( ) ) ] } { }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ( ( ( ) ( ) ) ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( { } [ ( ) } ( ) (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( { } ) ( ) ( ) [ ] ( { ( [ ( ) ] ) } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} ) } ( ] } ) ) ) } ) ) ) ( ] } } ) } }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ [ { } ] ] { [ ] ( { } ) [ ] } { ( ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( } ( ) ) ) ) ) [ [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ( { } ] ] ) } { )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } [ { } ] { } [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( { [ ) ( ( ) ) } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( ) { } { } } [ ] { } { { { ( ) } } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) ( ( ) ( ( ) [ ( ) ] ) ) { } { } [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( [ ] ) { } ( ) ( ( [ ] { [ { } ] } ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ [ ] } [ ] [ [ ] [ ] { [ ( ) ( ) ] } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] { } { ] ( ] { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } ( ) ( ) [ [ ( ) ] [ ] [ [ ] ] ( ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ [ [ ( ( ) [ ] ( { } ) ) ] ] ( { } ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( { } ( ) ) { } ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ( ) ( [ [ ] ] ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } { { { [ ] } } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) [ ] { } { ( ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} } ) { ] ( { ( ) ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ( ( [ ( ) ] ) ( ) ) ] [ ] { ( { } ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ [ ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } { } { } ( { } ) [ ] { [ ] } ( ) [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ( ) ] ( ) { } { } ( { } ) { { } } ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( { } ) ( ) ( ) [ { } [ { ( ) } { } ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") ( } ( ] ) } ) { ] } } [ { } ( } ( { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ( ] ) [ [ } ) } ( { ( ) ) ( ] } { ) (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] { } [ ) { [ ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( ) { } [ { } [ ] { } ] } { } { { } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ( { [ ] [ ] } ) ) [ { { } { } } ] ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ( ) [ { ) ] ] ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ) [ ( ) ] ( ( [ ] ) [ ] ) ( [ ( ) ] )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ [ [ [ ( { [ { } ] } ( ) ] { ( { { } [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) [ { { ( ) [ ] } } ] ( ) { [ ] ( ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] [ ] ( ) ( ] [ { } ] { } ( } ( { } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ [ ] ] { } ( ( ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( [ [ ] [ ( ) ] ( [ ] { } [ ] ) ] ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } { ) ( ) ) ( ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ { } ] [ ) [ ] [ ( [ { } ] { { } } ) ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) { { [ [ { ( [ ] ) ( ) } ( ) ] ] } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] [ ) [ ] { [ ( ) [ ( ( ( ) ) ) ] ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) { } ( ) ) [ ] ( ) ( ) { ( ) } ( { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ { { { } { } } ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ { } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } [ ] { [ { ( ) ( ( ( ) ( ) ) ) } ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) ( ) ( ) { [ ] } [ ( ( ) [ ] ) [ ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] ( ) ( [ ] ) { }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") ( ) ) ) { ) ) } ) } [ } { } ) { [ ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] ( ) [ ] [ { } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } { } [ [ [ ] { } [ ] [ ( ) ( ) ] ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} [ } ) ) ) } } } ) ( ] ) ) } ) } ) } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ [ ( ) ] [ ( [ { ( ) } ] ( [ ] ) ) ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( { } { { } ] ) ( { ( { } ( { } ) ) } }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") } ) [ { ] ( } [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( } { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ { { ( ) } ( ) [ { } ] [ [ ] ( ) ] } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ [ { } [ ] ] } { }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ [ { [ ] } [ ] { ( { [ ] ) ( ) ) } ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] ( { } ( ) ) [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ { } [ ] [ { { } } [ { [ { } ] } ] ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] [ ( ) ] [ ( ] ] [ ( [ ] ) ] ( [ ] )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] { ( { [ ] } ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] ( ) [ ] [ ] ( ( ) ) [ ] { } [ ] ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] ( ( ) ) { } [ [ ] [ { } [ ] ] ] ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ } ( ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } [ ] [ [ ] [ { } ] ] ( ) ( { } { } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") { ) {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ { { } } ( ) ( ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ [ [ { [ [ ] { { } ( ) } [ ] ] } ] ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") ) ) } [ } ) ) ) ) } } ) ) ) ( ] } ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ( ) ] ( ) { } ( ( { } [ ] ) ) { ( ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ] ) {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} [ [ } ] ( ] { ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ( ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) ( } } { } ) ) } { ) ( } ( ) ) } } [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( ) } { { } } [ ] { [ { } { { } } ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ } ( (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] [ ] ( ) [ { [ ] } ] [ ( ) { { } } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) { } [ ] [ [ ] ( { { } } ) ] ( ) ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } [ ] ( ) [ [ { ( [ ] ) } ( ) ( ( { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ( [ ] ( ) [ { ( { ( { } ) } ) } ] ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } ( ( ) [ ] ) ( [ { { { } } } ( ) ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ } ) [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ( [ ] ( ( ) ) ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) { } { } ( ) { [ ] { } ( ) { } } ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ] } {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] ( { } ( ) ) [ ] [ { ( ) [ ] ( ) } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") [ ] } ) ) } [ [ } } ( ) [ } { ) ) { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( [ { } { [ [ [ ( ) ) ( ) ] [ ] ] } (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") ) ) } ) } { ( ( } } ) [ ] ( ) [ ] ) [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} { } ( ) [ ] { ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) ) { } ( ) { } {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) { } ( ) ( ) ( }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") ) ( } [ ] ( ) ) ) } ( } [ [ } ) [ } [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( [ ] ) [ ] ( ( ( [ ] ) ) [ ] ) ( } ) (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( { [ { [ ] ( ) } ] ( ) [ ] } ) } { }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") ) } } ( ] ) } ) } ) [ ) } ) ) ) ) } }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") } } [ } ) ) ) ) ) ) } } ( } ) ) } } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ) { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( [ ] ) ( [ [ ] ] ) { } ( ) ) ( ] [ [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } ( [ { } [ ] ( [ { } ] { { } } ) ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ { ] ( [ ] ) ( ) ( ) ) ( ) ( ) { ( ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( [ { } ( ( ) ) ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") ( [ ( ) ] } [ ] ) ) ( ] { ) } } ) [ }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) { }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ) [ }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ) ( ) ) [ } ) } (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) [ ] ) ( ) ( ( [ ] [ { [ { } ] } ] )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ [ ] { } ] ( ) { }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) { ( ) } [ [ ( ) ] [ ] ] { ( ) } [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ( ) ] ) [ ) ( ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } { ( ) { } } ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ [ ] ( ) } ( { { [ ] { } } { ( ) } } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") ( ) ( } { ] [ [ ] { } } } ) ) ) ) { ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( [ [ [ { } ] ] ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } ) ) { } [ ] ( {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ { } { { ( ) } } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } ) { } { { { [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") ) ) } ) ) ) ) } ) ) { ] ) ) } } } ( }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ { ( ) ( ) [ ] [ ] } ] ( ) [ ] { [ ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ( ] ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ [ ( ) ( { } [ [ ] ] ( ( ) ( ) ) ) ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") ) } { } ( { ) ] {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ( ( ) ) ) [ ] [ ] [ [ ( } { [ ] ] ] ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) { [ ] { ( ) } { ( ) } [ ] } [ ] ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ [ ( ( ) ) ] [ ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } { } [ { { } } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ( ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } [ ] ( ) [ ] } [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( { { } { { { } ( { } ( ( ) ) ) } } } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") [ [ ) } } { { ] (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( } [ { { } } ] { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ( [ ) { } ) { } (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ( ( ( ( ] ) ] ] )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } ( [ { { } } ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( { [ ] ( [ ] ) ( ) } ( ] [ ] ) [ ( ) ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] ( ( [ ] [ ] ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( } ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) ( ( ( ( ) ) { [ ] } ( ) ) [ ( ) ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ( ) ] [ } [ [ ] ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ) [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( [ { } ] ) [ [ ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( { ( ( [ ] [ { } [ ] [ { } ] ] ) ) } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ) ( ] { [ ) ] { (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } ( ] } ) } ( ] [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ) } {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ( ) { } [ [ [ ) } ( } [ ) ) } { ) } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ } [ }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ [ ] [ ] ] [ ] ( ) { } [ ] ( ) ( ( ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ( ) ] { { { } } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ { } } { { ( ) } } ) { } { ) [ { } { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ { { } { } ( ) } ] ( ) { } ( ) ( { } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) ( ) ) ( [ { } {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] ( ) ( ( ( ) ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] { ( [ ] { } ) [ ( ) ] { { } } } [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ( ) } ) ) ( ] } }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ] [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ { } [ [ ] ) { ( ) ( ( [ [ ] ] ) ) } ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( [ ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ( ( ( ) [ [ ( ) ] [ ] ] ) [ ] ) } [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) ) ( { } ( ) [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( { } ) ( [ ( ) ] ) { ( { ( { } ) } ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ( ( ) ( ) ) ) { [ ] } { } { [ ] { } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ( ) ) { } [ { } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ [ { (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ( ( ) ) ) ( ( ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ [ ] ( [ { [ [ [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ) { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ] [ ( ) [ ( ) ] ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} [ [ ] ( ) [ ) [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ( ) ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } [ ] { } { } ( ) } ( [ ] ] { } ( ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] ( ) [ ] [ [ [ { { } } ] ( ( ) ) ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ [ ] ] { } [ ) ( ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ) } ) } } ) } } } } } } } } ) ( ] } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") } [ { [ ) } [ } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ( ) ] { ) [ ] ( [ { ( ] } ] ) { { } }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) } ( ( } { [ ) ] } { [ ] ] ) } ) ) (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} { ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] { } [ ( ( { { { { } [ ] } } } ) ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ( ) ) { } [ ] [ ] ( [ ] { [ ] { } } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") ) ) [ ] } { ( [ ] } ] } [ ) ( [ ] ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) [ ] } ( } } ) { ) } } ( { ] { } ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ) } ) } ) ) } [ ) ) ) } ) ) [ } } } }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} { [ (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") } { [ ) } [ } { )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) ) [ ] [ ] } [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") [ [ }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) { } [ { } ] { }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") ( ( (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( [ { ( { } ) { ( ) { } } } ] ) ( ) [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) ( [ ) ) { ( ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] [ }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( [ ] ] } [ { { } [ [ { [ [ ] [ ] [ [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ [ ] ] [ ] [ ] [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ } ( ] [ ) { ) [ }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ [ ] ] { ( { ) [ ] [ ( ) ] [ ] ( ) ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") { { } ) { ) ) ( }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) [ ( ) [ ] ] { }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) { { ( ) } } { } [ ] [ ) { ( ( ) ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( [ ] { } [ ( } ( ) ] { [ ] [ ( ) ] } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} [ ] [ [ ( { } ) ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ { [ { } } } } { } { ( ) ( ( ) ) } ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) { [ ] } { } ( ( ) ) [ ] { { ( ) } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( [ ] ) [ [ [ [ { } ( ) { } ( ) ] ] ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] ( [ ] ( ) ) ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") { ( ) } { } } ( (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( } ) ) } ) ) } } ) } } ) ) { ] } } ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} } ( } } ) } } } ) } } } } ) } ) } ( }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ [ ] [ ] } [ ] ( ( { ( [ ( ) ] ) } ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( [ ] (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } ( } ) } { ) ) {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } { } [ { [ ] } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } ( { } ( [ { [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ [ ( [ [ ( { } ) [ ] { } { } ] ] ) ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ( ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ( { } ( ( ) ) ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( { ( ) } ) { ( ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } ) { } { } [ ( ) ( } ( ) ] ( ) ( ) {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } } [ ] [ ] [ ] (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ( [ ] ] ] ( [ ] ) ( ( ) ) ( [ ( } ] )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( [ { } { { } } ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) [ ( ) ( ) ] { }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ { ( ) } [ ] { } ( ) { ( ( { } ) ) } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ( ) ] { ( [ ] ) ( [ ( ) ( ) ] ) { } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] ( [ { } { { } } ] [ { [ ] { } } ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} } ) ( ) ( } ) ( [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ( { { { } } } ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } [ ] ( ) { } [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] ( { } ) ( } { ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ [ ( ) ] } ( ) ( ) { ( { { } } [ ] ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( [ ] ) ) { ) ) ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ [ [ [ [ ] ] ] { { } } [ ] ] ] [ [ ] [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ) { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) [ [ ] ( ( ( ) [ { } ] ( ) ) { } ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") [ { [ } { } ( ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( [ ] ) ( ) } { ( [ ] ) { ( { } ) } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ { } ( [ [ ] } ) ] { } ( ) [ ] [ ] [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ] ( ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ) ( ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) ( ) ( ) { } [ ] ( { } { [ [ ] ] } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") ) ( {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} { } ( { } [ ] ) [ { } ( [ } ) { ( ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) { [ ] } [ ( ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} ( ( { ( ( ( ) ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ { ] {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } ( [ [ ] ( ) ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } { ( ) [ [ ] ] [ { ) ] ) ( ) [ ( ) ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") { } [ ] } { ] } }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) ( ) { } { ( ( { } ) ) { } } [ ] [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} { ( [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ( ( ) ( ) ( } } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) { } { ( ) ( ) } [ ] ( { { } } ) [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] ( ) ( ] ( ] { } ) } { ] ) } } [ } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) { } { { } } [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ [ ( { { [ ] { { [ ( ) ] } } } } ) ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] { [ ] ( { } ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( } [ } { ) } ( ( { ) ] ( { ) [ { [ } [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( [ [ ] { [ ( { } { ( ) } ) ( ) ] } ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ( { [ { { { } { { } } { } } } ] } ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( { [ ] } ) ( [ [ [ ( [ { } ] ) ] ] ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ [ [ [ [ ] ( { } [ ] ) ( ) [ ] ] ] ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ( ) } ( ) ( ) { } [ [ { } ( ) ( ) ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( } ) { ( { } { } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] { [ [ ( { } ) ] [ ] ( ) ] ( [ ] ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( { { { } ( ) } } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ] [ } ) ) ) ) { ] ) { [ [ [ ( ] ] ( ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( { } ) { } ( [ ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] [ ] { [ } [ ( ) [ ( ) [ ) ] ] } ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ [ ] [ ] [ ] ] { ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] [ ( [ [ ] ( ) [ ] ] ) ] ( { } ) ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ } { ( ) } ( { { ( ) { } { ( ) } } } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ) { ) } { ) ) { ( { ] } } } ( ) } { [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ] } ) ) ) } ) ) } ) ) ) { ] ) ) } } }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } ( ) ( ) [ ] [ ] { } [ ) ( { ( } } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( { { [ { ( ) { } [ ] } ( ) ] } } ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ( ) ) ) { { { ( ) ( ) } } } [ ] } ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( [ { [ ( [ ( ) ( ) { [ ] } ] ) ] } ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) ( [ [ ] ] { { { ( ) [ { } ] } { { [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) { } [ ] } [ ] { ( ) [ { } ] [ ] { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} { { ] ] ) ( ) ) } ) { } { ] [ ] [ ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } { { } } ( ) { }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ( ) ) [ ] [ { } ] [ [ { } [ [ ] ] ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ) [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( [ ] [ ( ) ] ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") ( { [ [ ] [ ] [ ] ] [ ( ) ( ) { } ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] ( ) { ] [ [ [ [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ { } } [ { ( [ { { { } [ ] } } ] ) } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ { [ ] } } { } { }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} ( ) [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ) } } ( ] } ) { } ) [ ( ) { ] } ) { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ { [ ] ) { { } } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} } { ) ) ( } ) ) ) } ) } } } ) } ) } }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] { [ { } { ) { ( ) } [ [ ( ) ] ] ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( } { } [ ] [ ] { ( ) [ ] } ( { ( ) } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } { } [ ( ( ) ) [ ( ) ] { ( ( ) ) } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") ) } ) ) ( ] ) ) } } ) ) } ) ) ) ) { ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") ) ) ( ( ) { ( ) } } ) } ) ( } } } ( [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] ( ) [ [ [ ] ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ( { } ) } { } [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ } ( ) { [ [ ] ( ) [ { ( { } ( ) ) ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ] } ( { ] { ] ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") ) } { [ ] } } } (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} } ) ) ) ) } ( ] ) [ } ) } } } ) ) ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] ( ( [ ] ) ( ( ) ) ) ( [ ] ( ( ) ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) ( ) { } ( { } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( [ ] ) [ ] ( ( ) ) ( ) ( ) [ [ ] ] ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} ) ) } ) } } ) } } ( ] } } } [ ) ) ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( ) } { } [ ( ) [ ] ] [ ( ( { } ) ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ( ( ( [ ] ) ] [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] ) ( ( ) ) [ ( } ] ( ) ( ) ( ) ( { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ [ ] ( ) { ( ) } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ { [ [ ) ] } ] ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] } } } } [ } ) ( ) ) ) { } ) [ } [ (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( { ( { { { } } } ( ) { ( ) } ( ) ) { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") { [ [ ] [ { } ] {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ] } ( ) [ ] ) ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } [ ] { [ ] [ ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( [ ] ) ( [ ( ) ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} } } ) ) ) { ] ) ) ) ) ) } } { ) } } }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] [ ] ( ( ) ) [ ] { ( ) [ ] ( ] } ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } { } ( ) [ [ [ ] ( } ] ( ( ) { } ) ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ) ( ) } { ) } } (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ [ } } ( ) [ [ { ( ( ) ( ) [ ] ) } ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ] [ [ ) [ { } ] ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) [ ] [ ( ) ) ( { ] ( [ ] { } ( ) ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( { } ) ( ] { } }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ( ) ) [ ] [ [ ] ] [ ] [ ] { { } ( ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } ( ) { [ ] } ( ( [ ] ) ( [ ( ) ] ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ) ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( { [ ] [ { { { [ [ [ ] ] ] } } } ] } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] { [ ] } [ ] { } ( ( ( [ { } ] ) ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ { } ( [ { [ ] } ] ) { ] ] { } { ( ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } ( [ ( { } ) ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") [ ] } ) } ( { ) } } [ ) ( [ ) [ ] ] (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } ) ( ) [ ] { } { ] { } { } ( ( ) ) {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( ) [ ( { { } [ ( ( ) ) ] ( ) } ) ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") { ] { ] } ( ) } [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ { } ( ) ( [ ] ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} ) ) ) [ ] } ) } ) } } } ) } ) ) } ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ( ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ [ ] [ ( { } ) ] [ ] ] [ ] ( [ { } ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} ( [ ] ) [ { [ ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") { { } [ ] ] [ ] (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ( ( ) [ { } { } { [ ] { } [ ] } ] ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } } [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ [ ] ] { ( { } ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} { } ( [ { } ] ) (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ { [ ] } ) ( ( ) ) { ( ( ( ) } ) } ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) ) [ [ [ { } ] ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] { ( ) } [ ( ) ( { } [ { } { } ] ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) { ( ) ( ) [ ] } { { } } { { } ( ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ { } ( { [ ] } ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ( } } { } { ( [ [ ) [ ] ] [ [ ] ] ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ) ( ] } ) } ) ) } } } ) ) } ) } } ( }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] { ( ) [ ] } [ ] { ( ( { { } } ) ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } ( ( { [ } } ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ] { [ { ( { } ) [ ( ) [ [ [ ] ] ] ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] ( [ [ [ ] ] ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} } [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ [ ] ] ( ) ( ) { }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ) { ) { } [ ] { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) ( { { { } [ ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") } ) } } ) } } ) } } ( } } ) ) } ) ( }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) [ ] { { ( [ [ ] ] ) { ( ) } } } ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) ( ( ) ) ( { [ ] } [ ] ( { [ ] } ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } { [ { } [ ] ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( [ ] { ( ) } ) { }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ { } (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } ( ) ( [ ( ( ) ) { } ( ) ] [ [ ] ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") } ( ] [ } [ { ] ] ( ) ) { ( ) ] } } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( ) { [ ( ( ] { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) { } { } ( ) ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) } [ ] [ ] { } {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ( ( ( ) [ ] ) ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( { { ( } ( ) } ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) { ( ) } ( ] ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ { } ] ( { } ) ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( { ( ( ) { { } } ) ( ) [ [ [ ] ] ] } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) ( [ ] ) { [ [ ] ] [ ( ) ] [ ] { } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ( ) ] ) ) ) ) ( [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} } ) } } } ( } } ) ) } ) ( ] ) } ) ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ( } } } } } ) ) ( } } ) ) ) ) } ) ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) { ( ) } ( { } [ ] [ ] ) { } [ ) [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ [ [ ] ] [ [ ] ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] { } [ ( ) ] ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) ( } [ ( { } ) ( ) ] { } ( ( { } ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] [ ] [ ( ) [ ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ( ) { ( [ ] ) } } } [ ] { { [ ] [ ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ { [ ] } ( { } ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ [ ( ( { { ( ( ) ( ) [ ] ) } } ) ) } }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( { } [ ] ) ( ) { { } ( { [ ] { } [ ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ [ [ ] ] } ( ) ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ { } ( [ ] ( ) ) } { } { } { } [ [ ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( [ ] [ ( { } ) ( ) ] { { } ( ) ( ) } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ( ) ( { { } } { ( ( } [ { } { } ] [ {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } ( [ ] } { } ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") ( ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ) { ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") ) } } ) ) ( ] ) ) ) ) } ) } } ) ) ) (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ( ) { ( ) { ( { } ( ) [ [ ] ] ) } } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ { } } [ [ ] ] [ ] [ ] [ ] { } { ( ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") [ [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] { } { ] [ ] [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] { } [ ( [ ] ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ [ ( ) ( } ( ) ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } [ ] [ ) ) { { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) { } ( { ( ) } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] { [ { } ( ) ( { ( { } ) } { } ) ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ [ ] ] { ( ) } [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( { } ) [ ( ( { } { { ( [ ] ) } } ) ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ [ ( ) ( ( { ( ) } ( ) { } [ ] ) ) ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ { [ ( ( ) ] ] } ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } { } { ( ) } [ ] ( ) [ ) [ ] ) [ [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) ( [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ( ( [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ) ( [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] ( ) ( ) [ ] [ ] ( ) ( ) [ ] [ [ ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") { ( }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ { { ( [ ] ) } } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} } } } } } [ } ) ) ) ) } ) } ) ) { ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) [ { } [ { [ ] { { } } ( ( ) ) } ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ( [ ] { ( ) } ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) { { { [ ] ( [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] [ ( [ ] [ ] ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) [ ] ( ( ) ) { } { { } } { } ( { } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } [ { } ( ) ] ( ) [ ( ) ] { { { } } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ [ { } ( ) { } ( ) ] ] ( ) ( [ ] { } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ { { [ ( ) ] } } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( { } [ ] ) { } ( ) ( } { } [ ( { } ) ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] { } { { { { [ ] } [ ] ( ) [ { } [ (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ] } [ [ } ] ( } ) { ) ( ] } ( ) ( ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ [ ] } [ ( [ ( ) ] [ { ( ) { } } ] ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ( } }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} } ) ) } ) } } ) [ ) } ) ) ) } ) } ( }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] ( [ [ ] { ( [ [ { } [ ] ] ] ) } ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( { } ) ( ) } { } [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( { ( ) } ( { } ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") ( ) ( { } [ } ) [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ) ( ( ( } } ] { ) ( { ] ] ( ] { ] } (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( } ) } } } ( ( ) ] { ( ( ] [ ] } ) ) (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } [ { [ ( [ ] ) [ { [ ] ( ) } ] ] } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ { } } [ [ ( ( ) ( ( [ ] ) ) ) ] { } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") { ] ) [ ( ) ) { )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( { [ { ( ( ) ( ) [ ( ) ] [ ) ) } ] } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") [ ) ( [ ] ] } { )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) [ ( [ ] { ) ) ] ( { } { ( ( ) { { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ( ) { ] [ } ) ) ( [ ) [ [ ) ) { ) } [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ } ) (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } [ ] [ ] { ( ) { } ( [ { } ] [ ] ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( [ ] [ [ ] ] [ ( ) ( ) ] ) { } { [ ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] { [ ] } { ( ) { ( ) ( ) } } { } ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] { } ( ( ) ) [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") ) ) } ) } } ) { ] } } ) } ) ) ) } ) (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ { } { } ] ( { { { [ ] } [ [ ] ] } } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ( ( ) [ ] ) ] ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ] ) { } ) [ [ ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} } { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] } ) ) ( } [ ] { ] { ] ( [ ] ] ) } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } { ( ) ( [ ] [ ] ) } [ ] ( ) [ { } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) { { } } { { } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ] { } } } ) ) ( [ } } } ) ( { } { } }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ [ ] [ { } ] [ ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } { } ( { ( ) } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ { [ ] [ ( { ( ) { } ( ) } ) ] } [ ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ { { [ [ ( ) ] ] } [ { } ] } } { ( ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] [ ] ( ) ( ) { } { } { } { ( [ ] ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ] { } ( ( ) ( ) [ { ( } } [ ( ) ] ] )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( ) [ ] } ( [ ] ( ( ) ) ) ( ) ( { } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ] ( }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} [ ) [ ) [ { ) ( }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ( } (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ) [ ) { ] ) } } } ) ) } ) } ) ) } ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( [ { { ] } ] ) {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) { { } } [ { } ] { [ ] } [ ( ) { } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) [ ] [ ( { } ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] [ ] [ ] { { } } [ [ ] { ( ( ) ) } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ [ ] } [ ( ) ] { }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } ( [ ] ) { } ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] { } ( { } ) { } ) ( ) { } [ ] ( ) (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( [ [ ] ( ) ] ) ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ [ ] ( ) } [ ( ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") ( { ] ( ] } ( ( ] } ( ) ) { ] } [ ] )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ [ { ] ] [ { [ ] } ] [ { { } } { } ] ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") ) ) ) { ) ) ) ) } [ } ) } } } } ) ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ [ ] { [ ] } [ { ( ) } [ ( ) ] [ ] ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ { } } ( [ ] ) ( ) [ ] ( [ ( ) ( ) ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] [ ] ( ( ) [ ] { { } } [ ] [ ] ) [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } ( ( ( ) ) ) { }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} { [ }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( { { } [ ] } ) { }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] [ [ ] ) ) } [ } ) [ } ) } ) { } [ }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} [ [ { } ] { } ] { { } [ ] } ( ) { ] [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ( } { } } [ } { )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } } ( [ ] ( ( ] ( ) ) ) { ( ) [ [ ] ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) ( ) { [ } [ ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } { ( { [ ] } ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ [ ] } [ ( ) ] [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( { } [ } ) [ ) ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( [ [ ] { } ( ( { } [ ) ) ) [ ( ) ] ] )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( ) } { [ ( ( ( ) ) [ ] ( { } ) ) ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ [ { } ] ] { ( ) [ [ ] [ ] ] { } { } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") } [ ] ) ) [ [ } ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) ( ) [ ] { ) { } [ ( ( ] [ ] ) { } ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) [ ( ) [ ] [ ] { { ( ( ) ) } ( ) } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ( ( ) ) ] { { } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ [ ] } ( ) [ [ ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ) [ ] { ) [ ( [ ] { { } { [ ] } } ) ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) ( { } [ ] [ ] ( ) { [ ] { { } } } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ] ) ) { [ { { ] ] ] [ } } } ) } ( { )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ { [ ] } ] ( ) [ ] ( ) { } [ { { } } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] ( ) ( [ ] ( [ ( ) ] [ ] ] [ ] { } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ) { (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ [ ] [ ] [ { } ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ { { ( ) [ ] [ { } [ ] ] } ( { } ) } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ) ( ) [ [ ] [ ] ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ] [ ] ( { } [ ] )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ) ( ) { { ) ) ( } } [ ) ( ) { ) ) ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ) [ { } [ ] ] { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) ( } [ ] } [ { } ( ( ) { ( { } ) } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") } { ) [ { ] } { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ( } ) } ( [ } ( [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ] { ] { { ] } } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ [ ] } ( ) [ [ [ [ ] [ ] ( ) [ ] ] ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ( ) ) { [ ] } ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) { ( ) { ( ) } } [ ] ( ) ( [ ] ) [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } [ ] { } { } [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") { ] ( ] [ [ ) ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( [ } { } [ ] ) { {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) { } [ [ [ ] ] ] [ ( ) ] [ ] { ( ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} ) [ } [ [ ) ] ) (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] [ ] { [ ( ) [ ] [ ] ] } [ ) [ } [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ [ ] ] [ ] { { } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] ( { } [ ( ( { { } } [ [ ] ] ) ) ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ } { [ ] } } ( } } ) } ) } ( } { ) ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] [ { { } [ ] } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) ) ) [ ) { ) [ )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ [ { } ( ) ( { ( (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ [ { } ] [ ] ] ( ( ( ) ( { ( [ ( ) ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ( ( ( [ ( [ ] ) { } { } ] ) ) [ ] ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ { } { { { } { { ( ( ( ) ) ) } } } } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } [ ] [ ] } [ { } ] [ ( [ ] ) ] [ ] [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ { } [ ] } [ ] [ { } ] [ ( ) ( ) ( ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} { [ [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} } ( {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) [ { } ] { ( ( [ ( ) [ ] ] [ [ ] ] {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) ) ( { ( ) } ) [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } { } { } [ ] ( ) ( ) ( ) [ { ( ) } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( } ) {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ { ( ] ( { } [ ( ( ) ) ] ( [ ] ) ) } }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ { [ { } ] [ [ ( ) { } { } ] ] { } } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] [ ] { ( ( [ { ( ) [ ] [ ] } ] ) ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] [ { } ] [ { } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } { [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} [ { ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) ( [ ] ( [ ( ) ] { ] ) ) [ ] ( ) ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") ) ) ) ) } ) ) ) } } ( ) ) ) } } } } }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ] ) ) [ [ [ ) { } } } ( } } ) { ] [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ { } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ( ( ) ] } } } ) [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") ) } { ( [ ) ) ] (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( } [ ] { } ) ( [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ) { [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( { } ( ) { } { } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } [ ] { ( ) { ( { ( ) } ) } } { { } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) ) [ ( ) } } [ { ] } ( ] } ( { ] ] )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } [ ] { } ( ) ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ [ [ ] [ ] ] ( ( { } ( [ ( ) ] ) ) ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ( [ ] ) ) ( ) [ ] { ( ) ( ( { } ) ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ [ ] { ( { } ) } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} [ ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) ( [ [ { } [ ] [ ] ] ] [ ] { } ( ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") [ ] ( ] } { } ( [ } ] { ) } } { ] [ }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ [ ] } [ ] ( [ ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( { ( ) ( { [ ] } [ ] ) } ( ) { } { } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ { } [ ] } ( ( ) [ ] ) [ ] { [ { } ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } { ( [ ] } } ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } { } ) [ [ ) ] [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] { } { } ( ) [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( } [ ) [ [ } [ [ )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( [ ( { ( [ { } ] ( ) { { ] } ] } ) ] )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) ( ( { { [ ] [ [ ] ( ) [ ] ] } } ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ [ ) ] { ) } ) { } ) } ( } } ( } } ( (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") ) } } ( } } } } } } [ ) } ) ) } } } }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ { } [ [ ) ] ) { } ( ( ) { } ( ) ) [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ) { { ] ] ( ) ( } ( { } ] ) } [ ] ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) ( ] { } ) ( { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] [ ] ( { } { { } } ) [ ] { } ( ( ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ [ { ( { } ) } ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] ) {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] { { { { ( { { } } ) ( ( ) ) } } } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] [ ] ( ) { ( ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ( { } [ ( ) { ( ) } ( ) ] ) } ( ) [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ] { } [ ] [ [ ( ) ] ] { } [ ( } { } ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ [ { (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ( ) [ ] ] { { [ [ ] [ ] ] ( ) ( ) } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) ( [ ] [ ] ) [ ] ( { ] { ( [ ] ) } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] { } [ { } ( ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") ( ) { ( [ ] ) } }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") { ) ) } } ) ) ) } } ) ) ) ( } ) ) } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} [ ] ( ( ) ) ( { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } ( [ ) ) [ ( ) ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") [ } ) ( } } } ( ] ( ] ) { ( ) ] ( { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ( { } [ ] ) ( ( ) { ( [ { } ] ) } ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") { { {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) [ ( ) ] [ ] ( { ( ( [ [ ] ] ) ) } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ { [ ] } ] [ ( } ] ( ) } { [ ] } [ ] [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } ( { } ) ( ( ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] { } [ { { [ ( [ ] [ ] ) ] } { } } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ { { ) } } [ { ( ) } [ ] ( ) { } { } ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") [ ) {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ [ ] { [ ] { [ ] [ ( ) ( ) { } ] } } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ( ) ] [ ] { } ) (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") ) [ } } ) ) ) ) ( } } } } ) ) } } ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } [ ] ( ) ( [ ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") [ ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] { { } } [ ] ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} ) } } } ) ) } ) } ) } } } { ] } } } [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ } } [ ( ) ) ) } [ [ ) ) { ) ( } [ ] )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ( ] ] [ ] [ [ ] ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) { } [ { } ] ( [ [ ] { [ ] } ] [ ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) { } ( ) ( ) { } [ ( ) ] [ { } ] ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ( } } { } ( ) { } ( ) [ ] { [ ] [ ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) { [ ] ( ) ( ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} ) ( } ) ) [ } [ } ( } ( [ ] ) [ ) ) (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ) } ) ( { ) } } ) ) } } } } } ) ) ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ { } ] [ { ( ) } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) [ ] { } { [ [ ] ] } ( ) { [ ] ( ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} } ) ) ) } } ) } [ } } } } } ) } ) } (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] { ( { ( ) { } } ) { } ( ) } ( ( ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } { ( ) [ ( ) ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ( ) ( } ] ( ( ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] { } ( [ { } ] ) [ ] [ ] ( { } ) { }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} } } } } ) ( ( ] } } } } ) ) ) ) } ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ( ) [ ] ) ( [ ( ) ] { ( ( ( ) ) ) } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] [ [ ( [ ] ) [ ( { [ ] } ) ] [ ] ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } ( ( { [ ] } ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ [ ] ] ( ( [ ] ( ) ] ) } ( ( { { } } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] ) ) ( } [ ] } } { ] ) ( ] } [ ] } {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ( ( ] ) } ) ) ) [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") } } } { ] ) } } } ) } } ) } ) ) { ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") ( } } [ ) { } ) } ) ) { } { ) [ ) ( (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ { } [ ] ] { ( ( ( ( ( } ( ) ) ) ) ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ [ ] { } } ( ) [ { } { } [ ] [ ] ] { }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } [ ] { ( { [ [ [ ] ] ] [ ] { } } ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} } } ) [ } { } { [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) [ } [ [ } { } ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ } ( ) } { } ( ) {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ [ ] ( [ ] { ( { } ) } ) [ ] ] { { } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ [ ( ( [ ] { } ) [ ] [ ] ( { } ) ) ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ [ ] [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ) ) } ( } [ [ ( {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") ) ) { [ ] { } ] )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ) ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( [ ( ( ( ) ) ) ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) [ ( ) ] ( { } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } { } } [ ( } [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ] [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) [ ] [ ] [ ] ( ) [ ] ( [ ] ] { } ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") ( ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] ( ) [ ] ( ) ( { [ ] { } [ ] } ) { }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] [ ] } ( { } ) [ ) } } } } ( ] } } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] [ [ { } ] [ ] [ [ { ( { } ) } ] ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( [ { } ] [ ( ) ( [ { [ ] { } } ] ) ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} ) } ) } ) [ } } ) } ) } ( } ) } } } }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ [ ] { [ ] } [ ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} { ( ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( } [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } [ [ ] [ ] ] [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( [ ] ) ( ) [ [ ] ] [ ] { { } ] ( } [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ( ) [ ] ] { [ ] } { } [ ( ( ) { } ( {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } { ( ) ( ) } [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") ) [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( { } { [ ( ) ] } ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( { } ) ( ) ( ( ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ( [ [ { } ] [ [ ] [ { { } } ] ] ] ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} { ] ) ) { } } ( ) [ ( ( } } ] ) { ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ( ) [ ] { ) ) } (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } { } [ ( ) ( ( ) ) ] [ { { } ( ) } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) [ ] [ ] { } { ( ) } ( ) ( { { } } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ] ) { ] [ } } ( {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ { ( [ { { } ( [ ] ) ( ( ) ) } ] ) } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ( ) } [ ] { } [ ] { ( ) { ] } ( ) ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } { } ( [ [ [ [ ( [ ] ) [ ] ] ] ] ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } [ [ ] { ( ] } ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") [ ] )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] } [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] ( { [ [ ] ] } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} [ ) ) ( ( { ] [ }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} } } ) ) { ) } ) } } } } ( ] } ) ) ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") ) ( ] { } { ) ) [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] { } ( ) [ ] ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( { } ) ( ) { { } } ( ) [ ] ( [ ] ( ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") [ ) } } } ) } ) ) } ) } ( } } } ) ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] ( ) ( { } [ ) ) { } ( ) ( ) [ ] { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } ( { ( { } ) } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) ( ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) ( { } ) { ( ( [ ( ) [ [ ] ] ] ) ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") ( ) } [ { [ { } ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") } } } ) } ) } ) ) ) } ) } } ) [ } ( ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( ) { } ( ) } ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") } } ( [ } ] } { ) { { ) } } } { } { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) [ { } ] ( ) ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) ( [ ( } [ ( ( ) ) { } ] ] ) ( { } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} [ [ ) } { } [ } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ } [ ) ( ) [ } ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } [ } [ ] } [ ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ } { (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( ) [ { } ] { } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ] [ [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") } } ) { ] ) } } } } } [ } } } ) ) } }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") ) [ ) } } } ) [ { [ ) } ] [ ] ) [ ) {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ( ( [ ( ) ] ) ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ { ( ) } [ { } ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ( ( ( ) ) { } ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } { } ( { } { } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ] ) { ) { ) ( ] [ } ) { } [ ] [ } } }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} } } } [ ) } ) ) } } ) } } } ) ) [ } }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ( ) ] [ [ ] ( ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } { { [ ( ) ] } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") { } (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] [ ] ( [ ] ( ) ) [ ] [ ] { } ( ( ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ { } ( ) ] { ( ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] ( ) [ { } ( ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( { [ ] [ ( ( ) [ [ ] ] { { { ) } { } }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ] } ) ( ) [ ( } { ) ] { ) } { ) } ( }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ { } ( } ] ( ] ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ) } ) ) } } } ) } ) ) ) ) [ } ) ) [ }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ { } } [ { ( [ ] ( ) { } [ ] ) [ ] } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") ( ( ) ) [ ) ) } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") ) [ [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } { [ ] [ ] } ( { { { } { } [ ] } } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] { } { } [ [ ] ] ( ) { } ( { ( ) } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } ( { [ [ ] ] } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } ( ) { } [ ] ( ) [ ] ( ] ( ) ( ( ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ( ( ) [ { } ] ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] ( [ [ { [ ] } [ ] ( { ( ) } ) ] ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") [ ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ { ( {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} [ ) } } [ ] ( ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ) ) ) ) ) } } ) ) ( ] } } ) ) ( } ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( [ ] ) [ [ ] ] { } [ [ [ ( ) { } ] ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} [ ] {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] [ ] { ( { } ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") ( ) {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ [ ] ] ( { [ ] } ) ( ) [ ] { } ( ) { }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ [ ] ( ] { } ] [ [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ [ ] [ { ( ) } ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( [ } ] ) ) [ { } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( [ ] ) [ ( { [ [ ] } ( ) } { { } } ) ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) } (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") [ ] } ) } } ( ) {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( ( ) [ ] [ ] ( { { } ( [ ] ) } ) ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ { } [ [ ] [ ] ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) ( ( ) [ ( ) ] ( ) ) [ { ( ) { } } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( { [ ( [ ] ( ) ( ) ( [ { } ] ) ) ] } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ } [ (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } [ ] { } [ ] [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ { } { [ ] [ ( { } ( { } [ ] ) ) ] } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ) ) [ } { } } ( ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ { [ ] } ( ) } { } [ { { } { { } } } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ( ) { ( { } ) } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] ( [ ] [ ] [ ] ) [ ] [ ( ) ] [ ( ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ [ ] ( ( { } [ ) ( { { } { } } ( { { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } { } ( ) ( ) { } ( { } ) [ { { } } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] [ ] ( ) { } [ [ ] ] ( [ [ ] ( ) ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ( ( ) ) [ ] ( ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} ( ( ) ) [ ( ) ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ) } ) ) } [ ) ) ) ) } } } ) ) [ } ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] { ] { [ ] } ) {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } { } { ( ) { { [ ] [ ( [ ] ) ] } } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} ) } { } } ) ( ) (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} } } [ ) ) ) ) } } ) } ( ] } } } ) ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ { [ ] } } [ { } ] { } [ ] [ [ ( ) ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] } [ ( { ) ] ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") ) } ) { ) } } ) } ) ( } } } ) } } } }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) [ ( ( { } ) ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ( ) ( [ ) ) ( { } { [ ] } ( { } ) ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ( } ] [ [ { ( ( ) ) } { } { } ( [ ] {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ] ( ) ( ( ] ) [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] { } { } ( ) { { [ ] [ ( ( ) ) ] } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] ) ( { } [ ] { } ( ) { [ } { [ ] } }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( [ ] { { } } ) [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ [ ( ( ( ) ) ) ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} ) ) { ) ) ) [ ( ) } [ ] { } [ ) } { ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ) ) ) } ) ) } ) ) ) { ) ) } ) } } { ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( { } ) ( ( ( ) ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ [ ] { ( { [ [ [ { { } } ] ] ] } ) } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( [ ] [ [ { } ] ( ) ] ( ] { } ) [ [ ] (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ( [ [ [ [ { } { ) ] { { } } ] ] { { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} } } } ( ] } } } ) } } ) ) } } ) } ) [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ( ( ) ) { } { { } } { } { { } { ] } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( } { } } } ) [ { ) { } ] ) ) ( } ( } }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ { [ ) } } [ } ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ [ ) ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") ) ) } { { ) ] ) } ) } ) ) } } ) } ) }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } { ( ( { } ) ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] [ ] ( ) [ [ ] { [ { } ] } ] [ } { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ] ) { ) } ) ( ) (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] [ { { ( { ( ( ) { } ( ) ) } ) } } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( [ { } ) ) [ ] ( { } ( ( ) ) ) ( { } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ( [ ] [ ] { [ ] [ [ [ ] ( ) ] ] } ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ { [ ( ) ] } ] [ ] [ { } ] [ ] [ ] [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( [ [ [ ] ] { } [ { [ { [ ] } ] } ] ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ) [ ) } } } [ ) } ( [ ] ] } { } [ ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} { ] [ ] [ ) { ] [ ] } ) ( ] } [ { ] )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ( ( { } ( ) } ) [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ { ( ) ( ) } ( { ( ) [ [ ] [ ] ] } ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ { [ ] } { { ( [ ] ) [ [ ] ] ( ) } } ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] { ( ( ( ) ) ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) ( ( ) { [ ( ) ] { } } ) ( { [ ] } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ { [ ] [ { ( ) } { } ] [ { [ ] } ] } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") ) } ) ) } ) } ) } ) ) ( [ ) } } ) ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( [ ] ) ( { ( { } ] ( [ ] [ ] [ ] ) } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} { } [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] ( ) { ] { } [ ] { { } } { ( [ ] ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) ) {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( ) } { [ [ ] ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ [ { } ( [ ] ) ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ { } ] { } { [ ] [ ] } [ ] ( { ( ) } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ( [ [ ] ( ( ) [ { } [ ] { } ] ) ] ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) [ { } ] ( ( ) { { [ ( [ ] ) ] [ ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ { } { ( ) } } [ [ ] } [ ] { ( ) } [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } ( ( ) ) [ ] [ { } ] { } [ ] [ ] [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( [ ( ) ] ) ( { } )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ( } [ ( ) ] ) { {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } ( ) ) ( { } ( ) ) { } ( ) } { } { (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } { } { { ] } ( ( ) { } } { { } } [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( { } { } ) { } ( )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ [ ( { } [ ] ) ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( } { [ ] [ [ ] ] } [ } ( [ ] { ( ) } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ( [ ( [ ] ) ] ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ [ [ { { } } [ ( [ [ ] [ ] ] ) ] ] ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ) ( ( ) ( ( ) ) )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] { ( ( ( [ [ { } ( ) ( ) ] ] ) ) ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ( ) ) } } ( ) { {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] { [ ] ) ( ( ] [ ] [ ] { { } { } } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ( { [ ] [ ( ) ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } } ) ( ) { } ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ) } ) ) } ) } } } } } ) ) ) } } ( ] (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") ( ( } ) } } { ( ] ] } ( } { } [ ) } [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ { } } { } { ( ) } [ [ [ ] [ ( ) ] ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ { ) { ] { [ ( ) [ { ( ) [ ] } ] ] } ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) { } [ ] { ( ) }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") ) } } ) } ) } } } ) } ) ) ) } [ } ) {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ [ { } ] ( ) } [ ] ( [ ] ) [ ] { { } }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") { ) } [ ] } { ] [",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ } [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( [ { } [ ] ( [ ( [ ( ) ] ( ) ) ] ) ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") [ { ] } { { ] } { ] } { ] } ( } [ ] }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") [ { ] ] ) [ ] ) } { ) [ ) { ) ( ] ) {",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ( ] { { ( [ ( ( ) { } ) ] ( ) ) } } ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } [ { ) ] [ [ { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ( { } [ { } ] ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "} { [ } } } ) [ } (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ { ( ) } } [ } ) (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ( ) { } ] [ ] ( ) [ ] [ [ { ( ) } ] ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "{ ( [ ] ) } ( [ ] { { } [ ] } [ { } ] )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": ") ) } } [ ] { ( ( ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ( ) ( ) { [ ] } ) { } { [ ( [ ] ) ] }",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ) { [ { } ] } { [ ] ( ) } ( { } ( ( )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ) } } ) ) } ) ) ) } ) [ } ) ) } [ } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "( ) ( ( { ( ) } ) )",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "[ ] ( ) { ( ) } ( [ ( ( ) } [ ] ] [ ] )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } [ { ( ) } ( ) ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        },
+        {
+            "input": "( ) { } [ ] ( ( { ( ) ] ) { } ( ) ) { }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": ") } [ ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ ( ) ] [ [ { } ] ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "{ } ( ) ( ) { { ( ) ( ) ) } [ ] [ { } ]",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} { } )",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] ) (",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "} ( ( }",
+            "target_scores": {
+                "Valid": 0,
+                "Invalid": 1
+            }
+        },
+        {
+            "input": "[ ] { } ( ) { } [ { } ] ( ) ( ) { } [ ]",
+            "target_scores": {
+                "Valid": 1,
+                "Invalid": 0
+            }
+        }
+    ]
+}

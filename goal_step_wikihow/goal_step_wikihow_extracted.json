@@ -1,0 +1,11 @@
+{
+    "name": "goal_step_wikihow",
+    "description": "Perform one of three subtasks: step inference, goal inference, or step ordering",
+    "keywords": [
+        "social reasoning",
+        "common sense",
+        "causal reasoning",
+        "multiple choice"
+    ],
+    "examples": []
+}

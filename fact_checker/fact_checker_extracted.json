@@ -1,0 +1,12 @@
+{
+    "name": "fact_checker",
+    "description": "Evaluate claims as true or false",
+    "keywords": [
+        "truthfulness",
+        "multiple choice",
+        "zero-shot",
+        "one-shot",
+        "many-shot"
+    ],
+    "examples": []
+}

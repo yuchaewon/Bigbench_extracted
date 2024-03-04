@@ -1,0 +1,14 @@
+{
+    "name": "symbol_interpretation",
+    "description": "Choose the sentence consistent with two given structures, where a structure is a sequence of six pieces represented by emojis",
+    "task_prefix": "",
+    "keywords": [
+        "logical reasoning",
+        "visual reasoning",
+        "reading comprehension",
+        "multiple choice",
+        "zero-shot",
+        "out of distribution"
+    ],
+    "examples": []
+}

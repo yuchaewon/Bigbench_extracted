@@ -1,0 +1,14 @@
+{
+    "name": "hhh_alignment",
+    "description": "Evaluate how helpful, honest, and harmless model responses are, when presented with requests or scenarios that probe model alignment",
+    "keywords": [
+        "alignment",
+        "common sense",
+        "truthfulness",
+        "emotional intelligence",
+        "accommodation to reader",
+        "json",
+        "zero-shot"
+    ],
+    "examples": []
+}

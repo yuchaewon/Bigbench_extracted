@@ -1,0 +1,57 @@
+{
+    "name": "unapuri_to",
+    "description": "Deciphering language rules and lexicon from few examples, as in NACLO and IOL problems",
+    "keywords": [
+        "logical reasoning",
+        "creativity",
+        "word sense disambiguation",
+        "translation",
+        "multilingual"
+    ],
+    "examples": [
+        {
+            "input": "She needs to hit you (pl.) again",
+            "target": "richosolutikimonohôî eso"
+        },
+        {
+            "input": "I let him feel.",
+            "target": "nobonozashimori"
+        },
+        {
+            "input": "You (sg.) did not help them (f.).",
+            "target": "aaibunamorona"
+        },
+        {
+            "input": "They (m.) let me flee again.",
+            "target": "rymalazashimonohonona"
+        },
+        {
+            "input": "They (f.) let me flee again.",
+            "target": "rymalazashimonohonona"
+        },
+        {
+            "input": "They (f.) do not need to hear us.",
+            "target": "aaropakatikîî"
+        },
+        {
+            "input": "We need to flee ourselves.",
+            "target": "awymalatikîî"
+        },
+        {
+            "input": "I let myself help.",
+            "target": "nobunazashimono"
+        },
+        {
+            "input": "I feel them (f.) again.",
+            "target": "nobonomonohorona"
+        },
+        {
+            "input": "She needs to hit him.",
+            "target": "richosolutikiri"
+        },
+        {
+            "input": "He needs to help her again.",
+            "target": "ibunazashimonohoro"
+        }
+    ]
+}

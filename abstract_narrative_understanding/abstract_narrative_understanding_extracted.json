@@ -1,0 +1,10 @@
+{
+    "name": "abstract_narrative_understanding",
+    "description": "Given a narrative, choose the most related proverb",
+    "keywords": [
+        "social reasoning",
+        "narrative understanding",
+        "analogical reasoning"
+    ],
+    "examples": []
+}

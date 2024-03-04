@@ -1,0 +1,13 @@
+{
+    "name": "strange_stories",
+    "description": "A psychology test with naturalistic short stories that measures social intelligence Boolean options",
+    "keywords": [
+        "theory of mind",
+        "social reasoning",
+        "emotional understanding",
+        "multiple choice",
+        "zero-shot",
+        "narrative understanding"
+    ],
+    "examples": []
+}

@@ -1,0 +1,11 @@
+{
+    "name": "logical_deduction",
+    "description": "Deduce the order of a sequence of objects",
+    "task_prefix": "",
+    "keywords": [
+        "logical reasoning",
+        "out of distribution",
+        "multiple choice"
+    ],
+    "examples": []
+}

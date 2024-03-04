@@ -1,0 +1,12 @@
+{
+    "name": "periodic_elements",
+    "description": "Predict names of elements from the periodic table, given indirect descriptions of the element's place on the table",
+    "output_regex": "",
+    "keywords": [
+        "chemistry",
+        "domain specific",
+        "context-free question answering",
+        "memorization"
+    ],
+    "examples": []
+}

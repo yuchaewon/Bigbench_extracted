@@ -1,0 +1,10 @@
+{
+    "name": "natural_instructions",
+    "description": "This dataset consists of 61 distinct tasks and the crowdsourcing instructions that were used to crowdsource them",
+    "task_prefix": "",
+    "keywords": [
+        "instructions",
+        "physical reasoning"
+    ],
+    "examples": []
+}

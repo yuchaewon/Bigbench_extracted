@@ -1,0 +1,12 @@
+{
+    "name": "chess_state_tracking",
+    "description": "Identify legal moves in the given chess position",
+    "task_prefix": "",
+    "keywords": [
+        "non-language",
+        "logical reasoning",
+        "context length",
+        "visual reasoning"
+    ],
+    "examples": []
+}

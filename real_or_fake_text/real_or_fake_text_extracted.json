@@ -1,0 +1,10 @@
+{
+    "name": "real_or_fake_text",
+    "description": "Determine the sentence at which a document transitions from human written to machine generated",
+    "task_prefix": "",
+    "keywords": [
+        "writing style",
+        "multiple choice"
+    ],
+    "examples": []
+}

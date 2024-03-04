@@ -1,0 +1,13 @@
+{
+    "name": "multiemo",
+    "description": "Analyze the sentiment of customer reviews",
+    "task_prefix": "",
+    "keywords": [
+        "emotional understanding",
+        "multiple choice",
+        "zero-shot",
+        "low-resource language",
+        "non-English"
+    ],
+    "examples": []
+}
