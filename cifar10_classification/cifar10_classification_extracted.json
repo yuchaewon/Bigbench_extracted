@@ -1,0 +1,11 @@
+{
+    "name": "cifar10_classification",
+    "description": "Classify CIFAR10 images encoded in various ways",
+    "task_prefix": "",
+    "keywords": [
+        "non-language",
+        "visual reasoning",
+        "out of distribution"
+    ],
+    "examples": []
+}

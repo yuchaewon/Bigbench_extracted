@@ -1,0 +1,12 @@
+{
+    "name": "tracking_shuffled_objects",
+    "description": "Determine the final positions of a set of objects given their initial positions and a description of a sequence of swaps",
+    "keywords": [
+        "logical reasoning",
+        "visual reasoning",
+        "multi-step",
+        "decomposition",
+        "multiple choice"
+    ],
+    "examples": []
+}

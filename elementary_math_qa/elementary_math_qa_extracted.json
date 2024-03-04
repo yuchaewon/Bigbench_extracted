@@ -1,0 +1,11 @@
+{
+    "name": "elementary_math_qa",
+    "description": "Answer multiple choice mathematical word problems",
+    "example_input_prefix": "",
+    "keywords": [
+        "logical reasoning",
+        "mathematics",
+        "arithmetic"
+    ],
+    "examples": []
+}

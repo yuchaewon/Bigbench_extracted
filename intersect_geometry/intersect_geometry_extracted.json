@@ -1,0 +1,14 @@
+{
+    "name": "intersect_geometry",
+    "description": "Find the number of intersection points between the shapes and lines specified by the given coordinates",
+    "task_prefix": "Find the number of intersection points between the shapes and lines specified by the coordinates given.\n",
+    "keywords": [
+        "logical reasoning",
+        "mathematics",
+        "arithmetic",
+        "visual reasoning",
+        "multiple choice",
+        "numerical response"
+    ],
+    "examples": []
+}

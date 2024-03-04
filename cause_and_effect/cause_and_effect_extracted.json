@@ -1,0 +1,11 @@
+{
+    "name": "cause_and_effect",
+    "description": "Answer multiple-choice questions distinguishing cause and effect",
+    "task_prefix": "",
+    "keywords": [
+        "causal reasoning",
+        "multiple choice",
+        "common sense"
+    ],
+    "examples": []
+}

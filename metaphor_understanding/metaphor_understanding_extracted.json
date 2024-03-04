@@ -1,0 +1,14 @@
+{
+    "name": "metaphor_understanding",
+    "description": "Translate between literal and metaphoric sentences",
+    "keywords": [
+        "figurative language",
+        "analogical reasoning",
+        "common sense",
+        "contextual question-answering",
+        "reading comprehension",
+        "paraphrase",
+        "word sense disambiguation"
+    ],
+    "examples": []
+}
